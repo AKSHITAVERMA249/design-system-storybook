@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# 🧩 Design System with Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A reusable **component design system** built with **React**, **TypeScript**, **CSS Modules**, and **Storybook** — ideal for scalable enterprise UI development.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Project Structure
 
-## Expanding the ESLint configuration
+//FOLDER STRUCTURE
+design-system-storybook/
+│
+├── .storybook/                  # Storybook configuration files
+│   ├── main.ts
+│   ├── preview.ts
+│   └── vitest.setup.ts
+│
+├── public/                      # Public static assets (if any)
+│
+├── src/
+│   ├── assets/                  # General assets (images, svgs)
+│   ├── stories/                 # Component implementations and stories
+│   │   ├── Button.tsx / .css / .stories.ts
+│   │   ├── Header.tsx / .css / .stories.ts
+│   │   ├── Page.tsx / .css / .stories.ts
+│   │   ├── ProgressBar.tsx / .css / .stories.ts
+│   │   └── SideNavigation.tsx / .css / .stories.tsx
+│   │
+│   ├── styles/                  # Global styling and design tokens
+│   │   ├── colors.css
+│   │   ├── App.css
+│   │   └── index.css
+│   │
+│   ├── App.tsx                  # Root application component
+│   ├── main.tsx                 # App entry point
+│   └── index.ts                 # Entry for exporting components (optional)
+│
+├── .gitignore
+├── eslint.config.js
+├── vite-env.d.ts
+└── README.md                    # Project documentation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+THE PROJECT INCLUDES 🧱 Foundational Element: Color System
+Create a token-based color system supporting B2B enterprise UI needs:
+● Primary, Secondary, Tertiary Colors
+● Neutral Colors (greys, whites, backgrounds, borders)
+● Semantic Colors: Success, Info, Warning, Error
+● Surface & Background Layers
+● Light & Dark Theme Support
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1.Data Display Components : "PROGRESS BAR"
+<img width="500" alt="Screenshot 2025-04-29 at 6 28 01 PM" src="https://github.com/user-attachments/assets/d1aebe93-e480-434e-a0bd-54ddeabdc8b4" />
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigation Components : "SIDEBAR NAVIGATION "
+<img width="500" alt="Screenshot 2025-04-29 at 6 28 30 PM" src="https://github.com/user-attachments/assets/4181a021-25fe-4768-9277-a50c1b7bae31" />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
