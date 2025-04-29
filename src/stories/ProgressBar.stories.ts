@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { ProgressBar, ProgressBarProps } from './ProgressBar';
 
-import '../styles/colors.css'; 
+import '../styles/colors.css'; // Ensure the color tokens are available
 
 const meta: Meta<typeof ProgressBar> = {
   title: 'Components/ProgressBar',
